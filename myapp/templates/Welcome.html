@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/dashstyle.css' %}">
+    <script src="https://kit.fontawesome.com/2edfbc5391.js"crossorigin="anonymous"></script>
+    <style>
+      .far{
+        color:#a7abde;
+        padding-left: 15px;
+        
+      }
+      .col-div-3 .box p{
+        font-size: 25px;
+
+      }
+      .box .fas{
+        color:#a7abde;
+        position:absolute;
+        padding-top: 50px;
+        
+
+      }
+      .box .fas .fa-home{
+        color:#a7abde;
+        padding-left: 20px;
+      }
+      
+    </style>
+
+</head>
+<body>
+<input type="checkbox" id="check">
+    <!--header area start-->
+    <header>
+      <label for="check">
+        <i class="fas fa-bars" id="sidebar_btn"></i>
+      </label>
+      <div class="left_area">
+        <h3>Society<span>HUB</span></h3>
+      </div>
+      <div class="right_area">
+        <a href="{% url 'userlogout' %}" class="logout_btn">Logout</a>
+      </div>
+    </header>
+    <!--header area end-->
+    <!--sidebar start-->
+    <div class="sidebar">
+      <center>
+        <img src="{% static 'images/download.png' %}" class="profile_image" alt="">
+        <h4>  </h4>
+      </center>
+      <a href="{% url 'welcome' %}" class="active"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
+      <a href="{% url 'notice'%}"><i class="fas fa-bullhorn"></i><span>Notice Board</span></a>
+      <a href="{% url 'event' %}" class="active"><i class="fas fa-bullhorn"></i><span>Event Info</span></a>
+    </div>
+    <!--sidebar end-->
+
+    <div class="content"> 
+      <h1>Welcome to Dashboard</h1>
+
+      
+     <div class="col-div-3">
+        <div class="box">
+          <p><br><span>{{ request.session.name }}</span></p>
+          <i class="far fa-user fa-2x"></i>
+        </div>
+      </div>
+      <div class="col-div-3">
+        <div class="box">
+          <p>
+      
+     <br><span>Your Flat No.</span></p>
+          <i class="fas fa-home fa-2x"></i>
+        </div>
+      </div>
+      <div class="col-div-3">
+        <div class="box">
+          <p>Sakshi Tiwari<br><span>Society Secretary</span></p>
+          <i class="fas fa-user-tie fa-2x" ></i>
+        </div>
+      </div>';
+
+    </div>
+    
+</body>
+</html>
